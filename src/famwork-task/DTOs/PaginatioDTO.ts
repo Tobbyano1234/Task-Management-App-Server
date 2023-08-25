@@ -1,4 +1,4 @@
-export type GetProductTableDTO = {
+export type GetTaskTableDTO = {
     page?: number;
     limit?: number;
 };

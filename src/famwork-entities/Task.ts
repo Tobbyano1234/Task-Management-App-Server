@@ -8,7 +8,6 @@ export class Task extends Document {
     title: string;
     description: string;
     dueDate: Date;
-    completionDate: Date;
     status: TaskStatus;
     notifications: [{
         date: Date;
@@ -22,15 +21,14 @@ const TaskSchema = new Schema({
     title: { type: String, required: true },
     description: { type: String, require: true },
     dueDate: { type: Date, required: true },
-    completionDate: { type: Date, required: true },
+    status: {type:String, enum:[TaskStatus.PENDING, TaskStatus.IN_PROGRESS, TaskStatus.COMPLETED], required:true},
     notifications: [
         {
             date: { type: Date, required: true },
-            time: { type: String, required: true }, // Store notification time as a string
+            time: { type: String, required: true },
             message: { type: String, required: true },
         },
     ],
-    status: {type:String, enum:[TaskStatus.PENDING, TaskStatus.IN_PROGRESS, TaskStatus.COMPLETED], required:true}
 }, { timestamps: true });
 
 export const TaskModel = model<Task>(ModelNames.TASK, TaskSchema);

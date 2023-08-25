@@ -1,13 +1,13 @@
 import { Admin } from "./Admin"
 import { General } from "./General"
-import { Product } from "./Product"
+// import { Product } from "./Product"
 import { Task } from "./Task"
 import { TempStore } from "./TempStore"
 import { User } from "./User"
 
 
 export enum ModelNames {
-    PRODUCT = "product",
+    // PRODUCT = "product",
     USER = "user",
     ADMIN = "admin",
     TASK = "task",
@@ -16,7 +16,7 @@ export enum ModelNames {
 }
 
 export type ModelTypeMap = {
-    [ModelNames.PRODUCT]: Product,
+    // [ModelNames.PRODUCT]: Product,
     [ModelNames.USER]: User,
     [ModelNames.ADMIN]: Admin,
     [ModelNames.TASK]: Task,
