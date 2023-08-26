@@ -1,29 +1,46 @@
-# Project: Task Management Web Application
+# Task Management Web Application - Backend
 
-Project Description
-Develop a task management web application where users can create, update, and manage tasks. The application will have both frontend and backend components. Users should be able to register, log in, and perform CRUD (Create, Read, Update, Delete) operations on tasks. The application should be responsive and user-friendly.
+This is the backend component of the Task Management Web Application, responsible for handling API requests, user authentication, and managing tasks in the database. The backend is developed using Node.js and Express, with MongoDB as the database and JWT for authentication.
 
-Frontend Requirements
+## Table of Contents
 
-1. User registration and login pages.
-2. Dashboard displaying a list of tasks for the logged-in user.
-3. Task creation, editing, and deletion functionality.
-4. Filter and sorting options for tasks.
-5. User-friendly interface with responsive design.
-6. Use of modern frontend technologies like HTML5, CSS3, JavaScript (ES6+), and a frontend framework like React, Angular, or Vue.js.
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
 
-Backend Requirements
+## Technologies Used
 
-1. RESTful API to handle user authentication (registration and login).
-2. API endpoints for CRUD operations on tasks.
-3. Secure authentication and authorization mechanisms.
-4. Database schema and design to store user information and tasks.
-5. Backend logic to handle task filtering and sorting.
-6. Use of a backend framework such as Express (Node.js), Django (Python), or Ruby on Rails (Ruby).
+- Node.js
+- Express (Backend Framework)
+- MongoDB (Database)
+- JWT (Authentication)
+- WebSocket (Real-time Updates)
 
-Bonus Challenges
+## Installation
 
-1. Implement user roles (admin and regular user) with different permissions.
-2. Add due dates and notifications for tasks.
-3. Use state management in the frontend (e.g., Redux) for a more organized UI.
-4. Implement real-time updates using WebSockets.
+1. Clone the repository: `git clone https://github.com/tobbyano1234/task-management-app-server.git`
+2. Navigate to the project directory: `cd task-management-app-server`
+3. Install dependencies: `yarn install`
+
+## Usage
+
+Compile the code: `yarn tsc`
+
+Start the backend server: `yarn start`
+
+The backend server will run on `http://localhost:4500`.
+
+## API Documentation
+
+The backend API provides endpoints for user authentication and task management. For detailed API documentation and usage, refer to the [API Documentation](API_DOCUMENTATION.md) file.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or want to enhance the backend, feel free to create a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
