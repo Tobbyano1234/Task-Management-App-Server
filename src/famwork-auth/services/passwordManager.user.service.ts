@@ -7,7 +7,7 @@ import { issueOtp, verifyOtp } from '../plugins';
 import { sendOtpMail } from '../../famwork-shared/mail';
 import { User, UserModel, GeneralModel, ModelNames } from '../../famwork-entities';
 
-const saltWorker = config.defaults.saltWorker;
+const saltWorker = +config.defaults.saltWorker;
 
 export const VerifyUserPasswordService = async ({ oldPassword, email, computedProps }: VerifyUserPasswordDTO) => {
   const _user = computedProps ? computedProps._user : null;
