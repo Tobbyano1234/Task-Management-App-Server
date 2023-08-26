@@ -7,7 +7,7 @@ export default {
         body: Joi.object({
             userID: Joi.string().required(),
             title: Joi.string().required(),
-            description: Joi.string().required(),
+            description: Joi.string().max(500).required(),
             dueDate: Joi.date().required(),
         })
     },
@@ -16,16 +16,12 @@ export default {
             taskID: Joi.string().custom(toObjectId).required(),
         }
     },
-    // getAllTasks: {
-    //     params: {
-    //         userID: Joi.string().custom(toObjectId).required(),
-    //     }
-    // },
     updateTask: {
         body: Joi.object({
             title: Joi.string().required(),
-            description: Joi.string().required(),
+            description: Joi.string().max(500).required(),
             dueDate: Joi.date().required(),
+            status: Joi.string().required(),
         }),
         params: {
             taskID: Joi.string().custom(toObjectId).required(),
