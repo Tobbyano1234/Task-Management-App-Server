@@ -1,21 +1,29 @@
-# MainStack-backend
+# Project: Task Management Web Application
 
-E-Commerce API
-Using Nodejs, Typescript, Express and MongoDB, build a simple ecommerce API with the following features:
+Project Description
+Develop a task management web application where users can create, update, and manage tasks. The application will have both frontend and backend components. Users should be able to register, log in, and perform CRUD (Create, Read, Update, Delete) operations on tasks. The application should be responsive and user-friendly.
 
-1. Create, get all and get single product
-2. Update product
-3. Delete product
-4. Simple pagination.
+Frontend Requirements
 
-Deploy your API to any cloud platform of your choice e.g render, heroku
+1. User registration and login pages.
+2. Dashboard displaying a list of tasks for the logged-in user.
+3. Task creation, editing, and deletion functionality.
+4. Filter and sorting options for tasks.
+5. User-friendly interface with responsive design.
+6. Use of modern frontend technologies like HTML5, CSS3, JavaScript (ES6+), and a frontend framework like React, Angular, or Vue.js.
 
-How To Install And Run The App
-clone the repo from the develop branch and run the following commands \*[x] Note: clone from master branch for testing purpose
+Backend Requirements
 
-install all dependencies
-yarn
-compile all typescript in src folder to javascript into dist folder
-yarn tsc
-start the server in the development mode
-yarn dev
+1. RESTful API to handle user authentication (registration and login).
+2. API endpoints for CRUD operations on tasks.
+3. Secure authentication and authorization mechanisms.
+4. Database schema and design to store user information and tasks.
+5. Backend logic to handle task filtering and sorting.
+6. Use of a backend framework such as Express (Node.js), Django (Python), or Ruby on Rails (Ruby).
+
+Bonus Challenges
+
+1. Implement user roles (admin and regular user) with different permissions.
+2. Add due dates and notifications for tasks.
+3. Use state management in the frontend (e.g., Redux) for a more organized UI.
+4. Implement real-time updates using WebSockets.
