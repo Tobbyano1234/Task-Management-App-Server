@@ -9,7 +9,7 @@ POST("/", [baseValidation(taskValidation.createTask), AuthMiddleware.baseAuthTok
 PUT("/:taskID", [baseValidation(taskValidation.updateTask), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, TaskController.updateTask]);
 DELETE("/:taskID", [baseValidation(taskValidation.deleteTask), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, TaskController.deleteTask]);
 GET("/:taskID", [baseValidation(taskValidation.getTask), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, TaskController.getTaskByID]);
-GET("/", [baseValidation(taskValidation.getAllTasks), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, TaskController.getAllTasks]);
+GET("/", [AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, TaskController.getAllTasks]);
 GET("/pagination/all", [baseValidation(taskValidation.getPagination), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, TaskController.getTaskPagination]);
 
 export default router;
