@@ -4,7 +4,7 @@ import { ModelNames } from ".";
 import { TaskStatus } from "../typings/Account.types";
 
 export class Task extends Document {
-    userId: ObjectId;
+    userID: ObjectId;
     title: string;
     description: string;
     dueDate: Date;
@@ -17,7 +17,7 @@ export class Task extends Document {
 };
 
 const TaskSchema = new Schema({
-    userId: { type: ObjectId, ref: ModelNames.USER, required: true },
+    userID: { type: ObjectId, ref: ModelNames.USER, required: true },
     title: { type: String, required: true },
     description: { type: String, require: true },
     dueDate: { type: Date, required: true },

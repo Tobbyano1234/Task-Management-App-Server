@@ -5,6 +5,7 @@ import { toObjectId } from "../../../famwork-shared/validateToObjectID";
 export default {
     createTask: {
         body: Joi.object({
+            userID: Joi.string().required(),
             title: Joi.string().required(),
             description: Joi.string().required(),
             dueDate: Joi.date().required(),
