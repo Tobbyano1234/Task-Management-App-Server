@@ -3,17 +3,18 @@ import { UpdateTaskDTO } from "../DTOs/UpdateTaskDTO";
 import { getTaskByIDService } from "./getTask.service";
 
 export const updateTaskService = async (UpdateTaskDTO: UpdateTaskDTO) => {
-    const { taskID, title, description, dueDate } = UpdateTaskDTO;
-    let newTitle: string, newDescription: string, newDueDate: Date;
+    const { taskID, title, description, dueDate, status } = UpdateTaskDTO;
+    let newTitle: string, newDescription: string, newDueDate: Date, newStatus: string;
     const { data: task } = await getTaskByIDService({ taskID }, { onTaskNotFound: () => { } });
     if (!task) return {
         success: false, message: `task with ${taskID} does not found`, data: null
     };
-    const { _id, title: _title, description: _description, dueDate: _dueDate } = task;
+    const { _id, title: _title, description: _description, dueDate: _dueDate, status: _status } = task;
     newTitle = title || _title;
     newDescription = description || _description;
     newDueDate = dueDate || _dueDate;
-    const updatedTask = await TaskModel.findByIdAndUpdate(_id, { title: newTitle, description: newDescription, dueDate: newDueDate }, { new: true });
+    newStatus = status || _status;
+    const updatedTask = await TaskModel.findByIdAndUpdate(_id, { title: newTitle, description: newDescription, dueDate: newDueDate, status: newStatus }, { new: true });
     return { success: true, message: `task updated successfully`, data: updatedTask }
 };
 
