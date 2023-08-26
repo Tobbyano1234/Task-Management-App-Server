@@ -16,11 +16,11 @@ export default {
             taskID: Joi.string().custom(toObjectId).required(),
         }
     },
-    getAllTasks: {
-        params: {
-            userID: Joi.string().custom(toObjectId).required(),
-        }
-    },
+    // getAllTasks: {
+    //     params: {
+    //         userID: Joi.string().custom(toObjectId).required(),
+    //     }
+    // },
     updateTask: {
         body: Joi.object({
             title: Joi.string().required(),
