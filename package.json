@@ -16,7 +16,7 @@
     "celebrate": "^12.2.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "dateformat": "^5.0.3",
+    "dateformat": "https://github.com/mcollina/dateformat",
     "debug": "^4.3.4",
     "dompurify": "^3.0.5",
     "dotenv": "^16.3.1",
