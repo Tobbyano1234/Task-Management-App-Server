@@ -7,7 +7,7 @@ export enum AccountType {
 }
 
 export enum TaskStatus {
-    PENDING = "pending",
+    TODO = "todo",
     IN_PROGRESS = "inprogress",
     COMPLETED = "completed"
 };
