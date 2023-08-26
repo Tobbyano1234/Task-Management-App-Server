@@ -21,7 +21,7 @@ const TaskSchema = new Schema({
     title: { type: String, required: true },
     description: { type: String, require: true },
     dueDate: { type: Date, required: true },
-    status: {type:String, enum:[TaskStatus.PENDING, TaskStatus.IN_PROGRESS, TaskStatus.COMPLETED], required:true},
+    status: {type:String, enum:[TaskStatus.TODO, TaskStatus.IN_PROGRESS, TaskStatus.COMPLETED], required:true},
     notifications: [
         {
             date: { type: Date, required: true },
