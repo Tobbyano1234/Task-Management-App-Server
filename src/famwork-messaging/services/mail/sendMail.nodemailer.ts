@@ -41,26 +41,26 @@ export const sendEmail = ({
   });
 };
 
-(async () => {
-  return new Promise((resolve, reject) => {
-    transport.sendMail(
-      {
-        from: "adegbesan86@gmail.com",
-        to: "sexypet.sherry@gmail.com",
-        subject: "hello world",
-        html: "<h1>Hello world!</h1>",
-      },
-      (err: any, info: any) => {
-        console.log("info here", info);
-        if (err) {
-          console.log("error here", err);
-          reject(err);
-        }
-        resolve(info);
-      }
-    );
-  });
-})();
+// (async () => {
+//   return new Promise((resolve, reject) => {
+//     transport.sendMail(
+//       {
+//         from: "adegbesan86@gmail.com",
+//         to: "sexypet.sherry@gmail.com",
+//         subject: "hello world",
+//         html: "<h1>Hello world!</h1>",
+//       },
+//       (err: any, info: any) => {
+//         console.log("info here", info);
+//         if (err) {
+//           console.log("error here", err);
+//           reject(err);
+//         }
+//         resolve(info);
+//       }
+//     );
+//   });
+// })();
 
 export const mailNotification = async (
   otp: string,
