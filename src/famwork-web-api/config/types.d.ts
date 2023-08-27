@@ -2,6 +2,7 @@ export type ConfigTypes = {
     env: string;
     port: number;
     apiDocs: string;
+    frontendAppUrl: string;
     store: {
         database: {
             mongodb: IMongodb;
@@ -10,20 +11,30 @@ export type ConfigTypes = {
     credentials: {
         jwt: IJWT;
     },
-    client:{
-        mediaClient:{},
-        mailClient:{
-            nodemailer:INodemailer;
+    client: {
+        mediaClient: {
+            cloudinary: ICloudinary;
+        },
+        mailClient: {
+            nodemailer: INodemailer;
         }
     }
     defaults: {
         saltWorker: number;
+        mailInfo: {
+            taskManagerMail: string;
+        }
     }
 };
 
+interface ICloudinary {
+    cloud_name: string;
+    api_key: string;
+    api_secret: string;
+}
 interface INodemailer {
-        authMail:string;
-        authPassword:string;
+    authMail: string;
+    authPassword: string;
 }
 interface IJWT {
     secret: string;

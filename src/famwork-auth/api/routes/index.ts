@@ -31,18 +31,13 @@ POST('/verify-email-user', [
 POST('/verify-email-admin', [
     baseValidation(authValidation.verifyEmailAdmin), AuthController.verifyAdminEmail]);
 
-POST('/change-password-user', [ /*changePasswordRateLimiter,*/
-    baseValidation(authValidation.changePasswordUser), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, AuthController.changeUserPassword]);
-POST('/change-password-admin', [ /*changePasswordRateLimiter,*/
-    baseValidation(authValidation.changePasswordAdmin), AuthMiddleware.baseAuthToken, AuthMiddleware.IsAdminMiddleware, AuthController.changeAdminPassword]);
+POST('/change-password-user', [baseValidation(authValidation.changePasswordUser), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, AuthController.changeUserPassword]);
+POST('/change-password-admin', [baseValidation(authValidation.changePasswordAdmin), AuthMiddleware.baseAuthToken, AuthMiddleware.IsAdminMiddleware, AuthController.changeAdminPassword]);
 
-POST('/reset-password-user', [ /*changePasswordRateLimiter,*/
-    baseValidation(authValidation.resetPasswordUser), AuthController.resetUserPassword]);
-POST('/reset-password-admin', [ /*changePasswordRateLimiter,*/
-    baseValidation(authValidation.resetPasswordAdmin), AuthController.resetAdminPassword]);
+POST('/reset-password-user', [baseValidation(authValidation.resetPasswordUser), AuthController.resetUserPassword]);
+POST('/reset-password-admin', [baseValidation(authValidation.resetPasswordAdmin), AuthController.resetAdminPassword]);
 
-// POST('/deactivate-account-user', [ /*changePasswordRateLimiter,*/
-//     baseValidation(authValidation.deactivateAccount), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, AuthController.deactivateAccount]);
+// POST('/deactivate-account-user', [baseValidation(authValidation.deactivateAccount), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, AuthController.deactivateAccount]);
 // POST('/suspendAccount/user/:accountID', [AuthMiddleware.baseAuthToken, AuthMiddleware.IsAdminMiddleware, AuthController.suspendUserAccount]);
 
 export default router;

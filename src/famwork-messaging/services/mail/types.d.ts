@@ -5,7 +5,6 @@ export interface IMailInfo {
   text: string;
   additionalInfo?: string;
   templateData?: Template;
-  // templateData?: object;
   templateId?: string;
 
 }
@@ -17,4 +16,7 @@ export type Template = {
   lastName?: string
   timeLeft: string,
   url?: string,
+  content?: string,
+  subject?: string,
+  buttonText?:string,
 }
