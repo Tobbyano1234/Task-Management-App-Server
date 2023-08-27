@@ -3,6 +3,8 @@ import { config } from '../../config';
 
 import authRoute from "../../../famwork-auth/api/routes/index";
 import taskRoute from "../../../famwork-task/api/routes/index";
+import userRoute from "../../../famwork-accounts/user/api/routes/index";
+import adminRoute from "../../../famwork-accounts/admin/api/routes/index";
 
 const router = Router();
 
@@ -10,13 +12,15 @@ const router = Router();
 router.get('/health-check', (_req: Request, res: Response) =>
     res.send({ check: 'FamWork server is live!. 📦 🧧 💪🏾' }),
 );
-
+console.log("con", config.apiDocs)
 // api docs route
 router.route('/docs').get((_req: Request, res: Response) => res.redirect(config.apiDocs));
 
-// product route
-router.use("/auth", authRoute)
-router.use("/task", taskRoute)
+// all route
+router.use("/auth", authRoute);
+router.use("/task", taskRoute);
+router.use("/user", userRoute);
+router.use("/admin", adminRoute);
 
 
 export default router;

@@ -14,8 +14,7 @@ export const sendRegistrationMail = async (account: MailAccount) => {
       firstName: nameFormat(account.firstName),
       lastName: nameFormat(account.lastName),
       otp:"",
-      timeLeft: "",
-      // url: ""
+      timeLeft: ""
     }
   });
 };

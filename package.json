@@ -14,6 +14,7 @@
     "@sendgrid/mail": "^7.7.0",
     "bcrypt": "^5.1.1",
     "celebrate": "^12.2.0",
+    "cloudinary": "^1.40.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dateformat": "https://github.com/mcollina/dateformat",
@@ -21,6 +22,7 @@
     "dompurify": "^3.0.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "file-type": "^18.5.0",
     "helmet": "^6.0.1",
     "http-errors": "^2.0.0",
     "http-status": "^1.6.2",
@@ -28,6 +30,8 @@
     "mailgun": "^0.5.0",
     "mongoose": "^6.5.2",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^3.1.25",
     "nodemailer": "^6.9.4",
     "nodemailer-sendgrid": "^1.0.3",
     "nodemon": "^2.0.20",
@@ -49,6 +53,7 @@
     "@types/http-errors": "^2.0.1",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/morgan": "^1.9.4",
+    "@types/multer": "^1.4.7",
     "@types/nodemailer": "^6.4.9",
     "@types/nodemailer-sendgrid": "^1.0.0"
   }

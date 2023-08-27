@@ -1,23 +1,14 @@
-// import userValidation from '../validations';
-// import { UserController } from '../controllers';
-// import { AuthMiddleware } from '../../../../unboxd-auth/services';
-// import { baseRouter, baseValidation } from '../../../../unboxd-shared/api';
-// import { singleFileUploadMiddleware } from '../../../../unboxd-shared/fileUpload';
+import userValidation from '../validations';
+import { AdminController } from '../controllers';
+import { AuthMiddleware } from '../../../../famwork-auth/middlewares';
+import { baseRouter, baseValidation } from '../../../../famwork-shared/api';
+// import { singleFileUploadMiddleware } from '../../../../famwork-shared/fileUpload';
 
 
-// const { PUT, GET, router } = baseRouter();
+const { GET, router } = baseRouter();
 
-// PUT('/profile', [ singleFileUploadMiddleware.single('avatar'), baseValidation(userValidation.updateProfile), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, UserController.updateProfile ]);
+// PUT('/profile', [ singleFileUploadMiddleware.single('avatar'), baseValidation(userValidation.updateProfile), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, AdminController.updateProfile ]);
 
-// PUT('/username', [ baseValidation(userValidation.updateUsername), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, UserController.updateUsername ]);
+GET('/:adminID', [baseValidation(userValidation.get), AuthMiddleware.baseAuthToken, AuthMiddleware.IsAdminMiddleware, AdminController.getUser]);
 
-// PUT('/email', [ baseValidation(userValidation.updateEmail), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, UserController.updateEmail ]);
-
-// GET('/:ID', [baseValidation(userValidation.get), UserController.getUser]);
-// GET('/profile/public', [baseValidation(userValidation.getUserProfile), UserController.getUserProfile]);
-
-// GET('/check/email', [ baseValidation(userValidation.checkEmail), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, UserController.checkEmail ]);
-
-// GET('/check/username', [ baseValidation(userValidation.checkUsername), AuthMiddleware.baseAuthToken, AuthMiddleware.IsUserMiddleware, UserController.checkUsername ]);
-
-// export default router;
+export default router;

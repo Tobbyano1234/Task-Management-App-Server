@@ -14,7 +14,8 @@ if (error) throw new Error(`Config validation error: ${error.message}`);
 export const config: ConfigTypes = {
     env: envVariables.NODE_ENV,
     port: envVariables.PORT,
-    apiDocs:envVariables.API_DOCS,
+    apiDocs: envVariables.API_DOCS,
+    frontendAppUrl: envVariables.FRONTEND_APP_URL,
     store: {
         database: {
             mongodb: {
@@ -31,20 +32,26 @@ export const config: ConfigTypes = {
             expirationInterval: envVariables.JWT_EXPIRY,
         },
     },
-    client:{
-        mediaClient:{},
-        mailClient:{
-            nodemailer:{
-              authMail:envVariables.AUTH_EMAIL,
-              authPassword:envVariables.AUTH_PASSWORD,
+    client: {
+        mediaClient: {
+            cloudinary: {
+                cloud_name: envVariables.CLOUDINARY_CLOUD_NAME,
+                api_key: envVariables.CLOUDINARY_API_KEY,
+                api_secret: envVariables.CLOUDINARY_API_SECRET,
+            },
+        },
+        mailClient: {
+            nodemailer: {
+                authMail: envVariables.AUTH_EMAIL,
+                authPassword: envVariables.AUTH_PASSWORD,
             }
         }
     },
-    defaults:{
+    defaults: {
         saltWorker: envVariables.SALT_WORKER,
-        // mailInfo:{
-
-        // }
+        mailInfo: {
+            taskManagerMail: envVariables.TASK_MANAGER_MAIL,
+        }
     }
 };
 
