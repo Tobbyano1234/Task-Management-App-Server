@@ -8,7 +8,7 @@ import { createTaskService, updateTaskService, deleteTaskService, getAllTasksSer
 export class TaskController {
     static createTask = BaseController(async (request: Request) => {
         const CreateTaskDTO = request.body as CreateTaskDTO;
-        const userID = request.token._id;
+        const userID = (request as any).token._id;
         CreateTaskDTO.userID = userID;
         const { success, message, data } = await createTaskService(CreateTaskDTO);
         return { status: success ? httpStatus.CREATED : httpStatus.BAD_REQUEST, message, data };
@@ -22,7 +22,7 @@ export class TaskController {
     });
 
     static getAllTasks = BaseController(async (request: Request) => {
-        const userID = request.token._id;
+        const userID = (request as any).token._id;
         const { success, message, data } = await getAllTasksService({ userID });
         return { status: success ? httpStatus.OK : httpStatus.BAD_REQUEST, message, data };
     });
