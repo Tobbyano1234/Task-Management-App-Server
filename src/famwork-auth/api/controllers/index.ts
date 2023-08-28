@@ -206,7 +206,7 @@ export class AuthController {
 
   static changeUserPassword = BaseController(async (request: Request) => {
     const ChangePasswordDTO = request.body as ChangeUserPasswordDTO;
-    ChangePasswordDTO.userID = request.token._id;
+    ChangePasswordDTO.userID = (request as any).token._id;
     const { success, message, data } = await ChangeUserPasswordService(
       ChangePasswordDTO
     );
@@ -219,7 +219,7 @@ export class AuthController {
 
   static changeAdminPassword = BaseController(async (request: Request) => {
     const ChangePasswordDTO = request.body as ChangeAdminPasswordDTO;
-    ChangePasswordDTO.adminID = request.token._id;
+    ChangePasswordDTO.adminID = (request as any).token._id;
     const { success, message, data } = await ChangeAdminPasswordService(
       ChangePasswordDTO
     );

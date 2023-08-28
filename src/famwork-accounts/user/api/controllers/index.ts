@@ -11,7 +11,7 @@ export class UserController {
   static updateProfile = BaseController(async (request: Request) => {
     const UpdateUserProfileDTO = request.body as UpdateUserProfileDTO;
     const { avatar: image } = UpdateUserProfileDTO;
-    UpdateUserProfileDTO.userID = request.token._id;
+    UpdateUserProfileDTO.userID = (request as any).token._id;
     UpdateUserProfileDTO.avatar = request.file ? (await singleFileUpload(request)).secure_url : image || '';
     const { message, data } = await updateUserService(UpdateUserProfileDTO);
     return { status: httpStatus.OK, message, data };
@@ -29,8 +29,8 @@ export class UserController {
 
   static deleteUser = BaseController(async (request: Request) => {
     const userID = request.params.userID;
-    const adminID = request.token._id;
-    const role = request.token.accountType;
+    const adminID = (request as any).token._id as string;
+    const role = (request as any).token.accountType as string;
     const { success, message, data } = await deleteUserService({ userID, role, adminID });
     return {
       status: success ? httpStatus.OK : httpStatus.BAD_REQUEST,

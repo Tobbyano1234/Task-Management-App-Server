@@ -12,7 +12,7 @@ const router = Router();
 router.get('/health-check', (_req: Request, res: Response) =>
     res.send({ check: 'FamWork server is live!. 📦 🧧 💪🏾' }),
 );
-console.log("con", config.apiDocs)
+
 // api docs route
 router.route('/docs').get((_req: Request, res: Response) => res.redirect(config.apiDocs));
 
